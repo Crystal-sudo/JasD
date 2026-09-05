@@ -1,0 +1,4489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="JasD Digital Solutions — Web development, cybersecurity, IT support, networking, applications, telecommunications, transportation and digital services.">
+
+<title>JasD | Digital Solutions</title>
+
+
+<style>
+
+/* =========================================================
+   JASD PREMIUM DIGITAL SOLUTIONS
+========================================================= */
+
+:root{
+
+    --purple-dark:#10021f;
+    --purple-deep:#1c0535;
+    --purple:#6d28d9;
+    --purple-light:#8b5cf6;
+    --purple-soft:#a78bfa;
+
+    --blue:#2563eb;
+    --cyan:#22d3ee;
+
+    --pink:#d946ef;
+    --magenta:#c026d3;
+
+    --white:#ffffff;
+    --off-white:#fbf9ff;
+    --lavender:#f4efff;
+
+    --text:#18121f;
+    --muted:#686071;
+
+    --max-width:1180px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    color:var(--text);
+
+    background:white;
+
+    line-height:1.6;
+
+    overflow-x:hidden;
+
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+
+    width:min(
+        var(--max-width),
+        calc(100% - 70px)
+    );
+
+    margin:auto;
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+header{
+
+    height:74px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:
+    rgba(12,2,24,.97);
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.09);
+
+    backdrop-filter:blur(18px);
+
+}
+
+.navbar{
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+}
+
+.logo{
+
+    width:43px;
+    height:43px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+    background:#08020f;
+
+    border:
+    1px solid
+    rgba(255,255,255,.25);
+
+    box-shadow:
+
+    0 0 12px
+    rgba(34,211,238,.3),
+
+    0 0 25px
+    rgba(124,58,237,.5);
+
+}
+
+.logo img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.brand-name{
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    line-height:1;
+
+}
+
+.brand-tagline{
+
+    color:#bdb0c9;
+
+    font-size:9px;
+
+    margin-top:4px;
+
+}
+
+.webcraft-name {
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:27px;
+
+    color:#eee8f2;
+
+    font-size:13px;
+
+}
+
+.nav a{
+
+    position:relative;
+
+    transition:.25s ease;
+
+}
+
+.nav a:hover{
+
+    color:#bda7ff;
+
+}
+
+.nav a.active{
+
+    color:#a78bfa;
+
+}
+
+.nav a.active:not(.quote)::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:-9px;
+
+    height:2px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple-light),
+        var(--pink)
+    );
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.quote,
+.btn.primary{
+
+    color:white !important;
+
+    background:
+    linear-gradient(
+        110deg,
+        #4f46e5,
+        #7c3aed 50%,
+        #c026d3
+    );
+
+    box-shadow:
+    0 8px 25px
+    rgba(124,58,237,.35);
+
+}
+
+.quote{
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    font-weight:800;
+
+    transition:.25s ease;
+
+}
+
+.quote:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 13px 32px
+    rgba(217,70,239,.4);
+
+}
+
+.menu{
+
+    display:none;
+
+    color:white;
+
+    font-size:25px;
+
+    background:none;
+
+    border:0;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:570px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    color:white;
+
+    background:
+
+    radial-gradient(
+        circle at 76% 38%,
+        rgba(139,92,246,.55),
+        transparent 29%
+    ),
+
+    radial-gradient(
+        circle at 96% 82%,
+        rgba(217,70,239,.35),
+        transparent 26%
+    ),
+
+    radial-gradient(
+        circle at 20% 90%,
+        rgba(37,99,235,.2),
+        transparent 27%
+    ),
+
+    linear-gradient(
+        115deg,
+        #090111,
+        #21053d 45%,
+        #3b0870 70%,
+        #100217
+    );
+
+}
+
+.hero-grid-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.17;
+
+    background-image:
+
+    linear-gradient(
+        rgba(255,255,255,.06) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,.06) 1px,
+        transparent 1px
+    );
+
+    background-size:55px 55px;
+
+    mask-image:
+    linear-gradient(
+        to bottom,
+        black,
+        transparent
+    );
+
+}
+
+.hero-glow{
+
+    position:absolute;
+
+    width:580px;
+    height:580px;
+
+    right:-170px;
+    top:-180px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(190,150,255,.15);
+
+    box-shadow:
+    0 0 100px
+    rgba(124,58,237,.18);
+
+}
+
+.hero-glow::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:45px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(217,70,239,.12);
+
+}
+
+.hero-inner{
+
+    min-height:570px;
+
+    display:grid;
+
+    grid-template-columns:
+    46% 54%;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-text{
+
+    padding:55px 0;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:7px 13px;
+
+    border-radius:30px;
+
+    color:#c4b5fd;
+
+    background:
+    rgba(124,58,237,.15);
+
+    border:
+    1px solid
+    rgba(167,139,250,.3);
+
+    font-size:10px;
+
+    font-weight:800;
+
+}
+
+.hero h1{
+
+    font-size:
+    clamp(
+        44px,
+        5vw,
+        61px
+    );
+
+    line-height:1.03;
+
+    letter-spacing:-2.7px;
+
+    margin:
+    20px 0 18px;
+
+}
+
+.hero h1 span{
+
+    background:
+    linear-gradient(
+        90deg,
+        #8db7ff,
+        #8b5cf6,
+        #c084fc,
+        #ef8cff
+    );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+.hero-description{
+
+    max-width:550px;
+
+    color:#ddd3e6;
+
+    font-size:14px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:13px;
+
+    margin-top:27px;
+
+    margin-bottom:38px;
+
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    padding:
+    13px 21px;
+
+    border-radius:8px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    transition:.25s ease;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.secondary{
+
+    color:white;
+
+    border:
+    1px solid
+    rgba(255,255,255,.34);
+
+    background:
+    rgba(255,255,255,.04);
+
+}
+
+.secondary:hover{
+
+    background:
+    rgba(255,255,255,.1);
+
+}
+
+
+/* =========================================================
+   HERO FEATURES
+========================================================= */
+
+.hero-features{
+
+    display:flex;
+
+    gap:28px;
+
+}
+
+.hero-feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+}
+
+.feature-icon{
+
+    width:36px;
+    height:36px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    color:#bba5ff;
+
+    background:
+    linear-gradient(
+        145deg,
+        #281044,
+        #4c1d95
+    );
+
+    border:
+    1px solid
+    rgba(167,139,250,.35);
+
+}
+
+.hero-feature strong{
+
+    display:block;
+
+    color:white;
+
+    font-size:11px;
+
+}
+
+.hero-feature small{
+
+    color:#aaa0b4;
+
+    font-size:9px;
+
+}
+
+
+/* =========================================================
+   DEVICE VISUAL
+========================================================= */
+
+.visual{
+
+    height:450px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.laptop{
+
+    width:590px;
+    height:310px;
+
+    position:relative;
+
+    padding:8px;
+
+    border:
+    2px solid
+    #756b80;
+
+    border-radius:
+    17px 17px 8px 8px;
+
+    background:#08040d;
+
+    box-shadow:
+
+    0 30px 70px
+    rgba(0,0,0,.65),
+
+    0 0 70px
+    rgba(124,58,237,.18);
+
+}
+
+.laptop-screen{
+
+    height:100%;
+
+    overflow:hidden;
+
+    border-radius:9px;
+
+    position:relative;
+
+    background:
+
+    radial-gradient(
+        circle at 80% 10%,
+        #d946ef,
+        transparent 27%
+    ),
+
+    radial-gradient(
+        circle at 20% 90%,
+        #2563eb,
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #170b2b,
+        #4820a0 58%,
+        #25105a
+    );
+
+}
+
+.screen-nav{
+
+    height:38px;
+
+    padding:0 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    color:white;
+
+    font-size:7px;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.1);
+
+}
+
+.screen-nav strong{
+
+    font-size:9px;
+
+}
+
+.screen-content{
+
+    padding:38px 35px;
+
+}
+
+.screen-content h2{
+
+    color:white;
+
+    font-size:25px;
+
+    line-height:1.15;
+
+}
+
+.screen-content p{
+
+    max-width:270px;
+
+    color:#e6dcef;
+
+    font-size:7px;
+
+    margin:
+    10px 0 15px;
+
+}
+
+.screen-btn{
+
+    display:inline-block;
+
+    padding:7px 12px;
+
+    color:white;
+
+    border-radius:20px;
+
+    font-size:7px;
+
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        100deg,
+        #4f46e5,
+        #d946ef
+    );
+
+}
+
+.screen-features{
+
+    position:absolute;
+
+    left:30px;
+    right:30px;
+
+    bottom:17px;
+
+    display:flex;
+
+    gap:28px;
+
+    color:white;
+
+    font-size:7px;
+
+}
+
+.laptop-base{
+
+    position:absolute;
+
+    width:630px;
+    height:12px;
+
+    bottom:27px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        #666,
+        #f0f0f0,
+        #777
+    );
+
+    box-shadow:
+    0 5px 18px
+    rgba(0,0,0,.55);
+
+}
+
+.phone{
+
+    width:137px;
+    height:274px;
+
+    position:absolute;
+
+    right:4px;
+    bottom:43px;
+
+    padding:6px;
+
+    border:
+    3px solid
+    #71677c;
+
+    border-radius:23px;
+
+    background:#09050e;
+
+    box-shadow:
+
+    0 25px 55px
+    rgba(0,0,0,.7),
+
+    0 0 30px
+    rgba(217,70,239,.2);
+
+}
+
+.phone-screen{
+
+    height:100%;
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+    padding:18px 12px;
+
+    background:
+
+    radial-gradient(
+        circle at 100% 0%,
+        #f0abfc,
+        transparent 24%
+    ),
+
+    linear-gradient(
+        145deg,
+        #211047,
+        #6d28d9 58%,
+        #c026d3
+    );
+
+}
+
+.phone-screen strong{
+
+    color:white;
+
+    font-size:7px;
+
+}
+
+.phone-screen h3{
+
+    color:white;
+
+    font-size:15px;
+
+    line-height:1.15;
+
+    margin-top:26px;
+
+}
+
+.phone-screen p{
+
+    color:#e9dff0;
+
+    font-size:6px;
+
+    margin:
+    9px 0 13px;
+
+}
+/* =========================================================
+   ARTISTIC PURPLE BARS — LAPTOP & PHONE SCREENS
+========================================================= */
+
+.screen,
+.phone-screen {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Purple artistic bars */
+.screen::before,
+.phone-screen::before {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    background:
+        linear-gradient(
+            125deg,
+            transparent 0%,
+            transparent 18%,
+            rgba(124, 58, 237, 0.22) 19%,
+            rgba(168, 85, 247, 0.45) 25%,
+            transparent 26%,
+            transparent 38%,
+            rgba(139, 92, 246, 0.25) 39%,
+            rgba(192, 132, 252, 0.50) 47%,
+            transparent 48%,
+            transparent 62%,
+            rgba(109, 40, 217, 0.30) 63%,
+            rgba(167, 139, 250, 0.45) 70%,
+            transparent 71%,
+            transparent 100%
+        );
+    transform: rotate(-8deg);
+    animation: purpleBars 9s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+/* Extra glow */
+.screen::after,
+.phone-screen::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(168, 85, 247, 0.25);
+    filter: blur(55px);
+    border-radius: 50%;
+    top: 10%;
+    right: 5%;
+    z-index: 0;
+}
+
+/* Keep actual content above the bars */
+.screen-content,
+.screen-features,
+.phone-screen strong,
+.phone-screen h3,
+.phone-screen p {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes purpleBars {
+    0% {
+        transform: rotate(-8deg) translateX(-20px);
+    }
+
+    50% {
+        transform: rotate(-8deg) translateX(10px);
+    }
+
+    100% {
+        transform: rotate(-8deg) translateX(35px);
+    }
+}
+/* LAPTOP SCREEN ARTISTIC BARS */
+.screen::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background:
+        linear-gradient(
+            120deg,
+            transparent 15%,
+            rgba(124, 58, 237, 0.25) 16%,
+            rgba(168, 85, 247, 0.65) 23%,
+            rgba(126, 34, 206, 0.35) 30%,
+            transparent 31%,
+
+            transparent 40%,
+            rgba(139, 92, 246, 0.35) 41%,
+            rgba(192, 132, 252, 0.70) 49%,
+            rgba(124, 58, 237, 0.35) 56%,
+            transparent 57%,
+
+            transparent 67%,
+            rgba(109, 40, 217, 0.35) 68%,
+            rgba(168, 85, 247, 0.60) 76%,
+            transparent 77%
+        );
+
+    transform: rotate(-8deg);
+    z-index: 0;
+    animation: laptopBars 10s ease-in-out infinite alternate;
+}
+
+@keyframes laptopBars {
+    from {
+        transform: rotate(-8deg) translateX(-25px);
+    }
+
+    to {
+        transform: rotate(-8deg) translateX(30px);
+    }
+}
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:32px;
+
+}
+
+.section-heading .label{
+
+    color:#6d28d9;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
+
+}
+
+.section-heading h2{
+
+    font-size:31px;
+
+    line-height:1.2;
+
+    margin:5px 0;
+
+}
+
+.section-heading p{
+
+    color:#696071;
+
+    font-size:11px;
+
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services{
+
+    padding:
+    70px 0 50px;
+
+    background:white;
+
+}
+
+.service-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.service{
+
+    min-height:205px;
+
+    padding:21px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:
+    1px solid
+    #e3d9ee;
+
+    border-radius:14px;
+
+    background:
+    linear-gradient(
+        180deg,
+        white,
+        #fdfaff
+    );
+
+    box-shadow:
+    0 8px 25px
+    rgba(77,35,112,.05);
+
+    transition:.3s ease;
+
+}
+
+.service::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:3px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #d946ef
+    );
+
+}
+
+.service:hover{
+
+    transform:translateY(-7px);
+
+    border-color:#cfc0df;
+
+    box-shadow:
+    0 18px 40px
+    rgba(85,39,125,.13);
+
+}
+
+.service-icon{
+
+    width:46px;
+    height:46px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin-bottom:12px;
+
+    border-radius:11px;
+
+    color:#6d28d9;
+
+    font-size:20px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #eee7ff,
+        #faf8ff
+    );
+
+    border:
+    1px solid
+    #dfd3f0;
+
+}
+
+.service h3{
+
+    font-size:14px;
+
+    margin-bottom:7px;
+
+}
+
+.service p{
+
+    color:#697184;
+
+    font-size:10px;
+
+    line-height:1.55;
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+
+    padding:27px 0;
+
+    background:
+    linear-gradient(
+        90deg,
+        #eee7ff,
+        #faf8ff,
+        #eee7ff
+    );
+
+    border-block:
+    1px solid
+    #dfd4ec;
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+}
+
+.stat{
+
+    min-height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    border-right:
+    1px solid
+    #d9cee6;
+
+}
+
+.stat:last-child{
+
+    border-right:0;
+
+}
+
+.stat-icon{
+
+    width:39px;
+    height:39px;
+
+    display:grid;
+
+    place-items:center;
+
+    color:#6d28d9;
+
+    font-size:23px;
+
+}
+
+.stat strong{
+
+    display:block;
+
+    font-size:27px;
+
+    line-height:1;
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #d946ef
+    );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+.stat span{
+
+    display:block;
+
+    color:#5e5568;
+
+    font-size:10px;
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+
+    padding:85px 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #f5efff
+    );
+
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 380px;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+.about-label{
+
+    color:#6d28d9;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:.13em;
+
+}
+
+.about h2{
+
+    font-size:42px;
+
+    line-height:1.08;
+
+    margin:
+    9px 0 17px;
+
+    letter-spacing:-1.5px;
+
+}
+
+.about h2 span{
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #d946ef
+    );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+.about p{
+
+    max-width:650px;
+
+    color:#686071;
+
+    font-size:13px;
+
+}
+
+
+/* =========================================================
+   ANIMATED BRAND
+========================================================= */
+
+.brand-display{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.jasd-orbit{
+
+    width:290px;
+    height:290px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+}
+
+.jasd-ring{
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    background:
+    conic-gradient(
+        from 0deg,
+        #00eaff 0deg,
+        #2563eb 55deg,
+        #7c3aed 120deg,
+        #d946ef 190deg,
+        #ff2bd6 250deg,
+        #00eaff 360deg
+    );
+
+    animation:
+    jasdRingReverse
+    7s
+    linear
+    infinite;
+
+    box-shadow:
+
+    0 0 10px
+    rgba(0,234,255,.8),
+
+    0 0 25px
+    rgba(124,58,237,.7),
+
+    0 0 45px
+    rgba(217,70,239,.45);
+
+    z-index:1;
+
+}
+
+.jasd-ring::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:6px;
+    left:6px;
+    right:6px;
+    bottom:6px;
+
+    border-radius:50%;
+
+    background:#f5efff;
+
+}
+
+.jasd-ring::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+    height:24px;
+
+    top:1px;
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    z-index:3;
+
+    box-shadow:
+
+    0 0 7px
+    #00eaff,
+
+    0 0 18px
+    #7c3aed;
+
+}
+
+.jasd-logo{
+
+    width:225px;
+    height:225px;
+
+    position:relative;
+
+    z-index:5;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    background:#08020f;
+
+    border:
+    5px solid
+    white;
+
+    box-shadow:
+
+    0 0 15px
+    rgba(124,58,237,.55),
+
+    0 0 35px
+    rgba(217,70,239,.35);
+
+    animation:
+    jasdLogoClockwise
+    10s
+    linear
+    infinite;
+
+}
+
+.jasd-logo img{
+
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+}
+
+@keyframes jasdLogoClockwise{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes jasdRingReverse{
+
+    from{
+        transform:rotate(360deg);
+    }
+
+    to{
+        transform:rotate(0deg);
+    }
+
+}
+
+
+/* =========================================================
+   PORTFOLIO / SERVICES SHOWCASE
+========================================================= */
+
+.portfolio{
+
+    padding:85px 0;
+
+    background:white;
+
+}
+
+.portfolio-intro{
+
+    max-width:720px;
+
+    margin:
+    -15px auto 35px;
+
+    text-align:center;
+
+    color:#686071;
+
+    font-size:12px;
+
+}
+
+.portfolio-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.project{
+
+    min-height:230px;
+
+    padding:25px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    color:white;
+
+    border-radius:15px;
+
+    background:
+
+    radial-gradient(
+        circle at 85% 8%,
+        rgba(217,70,239,.55),
+        transparent 27%
+    ),
+
+    radial-gradient(
+        circle at 5% 100%,
+        rgba(34,211,238,.22),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #18062c,
+        #5515a1 58%,
+        #a21caf
+    );
+
+    box-shadow:
+    0 15px 35px
+    rgba(72,27,110,.13);
+
+    transition:.3s ease;
+
+}
+
+.project:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 24px 48px
+    rgba(72,27,110,.22);
+
+}
+
+.project small{
+
+    color:#e2d7ff;
+
+    font-size:9px;
+
+    letter-spacing:.12em;
+
+}
+
+.project h3{
+
+    font-size:20px;
+
+    margin-top:8px;
+
+}
+
+.project p{
+
+    max-width:300px;
+
+    color:#e6dced;
+
+    font-size:10px;
+
+    margin-top:7px;
+
+}
+
+.project-number{
+
+    position:absolute;
+
+    right:13px;
+
+    bottom:-17px;
+
+    font-size:100px;
+
+    line-height:1;
+
+    font-weight:900;
+
+    color:
+    rgba(255,255,255,.055);
+
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process{
+
+    padding:85px 0;
+
+    background:#faf8fd;
+
+}
+
+.process-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.process-item{
+
+    padding:18px;
+
+    border-top:
+    2px solid
+    #8b5cf6;
+
+    transition:.25s;
+
+}
+
+.process-item:hover{
+
+    border-color:#d946ef;
+
+    transform:translateY(-4px);
+
+}
+
+.process-number{
+
+    color:#7c3aed;
+
+    font-size:11px;
+
+    font-weight:900;
+
+}
+
+.process-item h3{
+
+    font-size:16px;
+
+    margin:5px 0;
+
+}
+
+.process-item p{
+
+    color:#6a6270;
+
+    font-size:10px;
+
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+
+    padding:
+    70px 0;
+
+    background:white;
+
+}
+
+.contact-box{
+
+    padding:
+    35px;
+
+    color:white;
+
+    border-radius:16px;
+
+    background:
+
+    radial-gradient(
+        circle at 85% 15%,
+        rgba(217,70,239,.42),
+        transparent 27%
+    ),
+
+    radial-gradient(
+        circle at 5% 100%,
+        rgba(37,99,235,.25),
+        transparent 28%
+    ),
+
+    linear-gradient(
+        105deg,
+        #10031d,
+        #3d0a69,
+        #26043e
+    );
+
+    box-shadow:
+    0 20px 50px
+    rgba(64,27,100,.18);
+
+}
+
+.contact-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    margin-bottom:28px;
+
+}
+
+.contact-label{
+
+    color:#cbbbd6;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
+
+}
+
+.contact-box h2{
+
+    font-size:25px;
+
+    margin:3px 0;
+
+}
+
+.contact-box p{
+
+    color:#cfc1d8;
+
+    font-size:10px;
+
+}
+
+.contact-actions{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:12px;
+
+}
+
+.contact-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    padding:15px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.13);
+
+    border-radius:10px;
+
+    background:
+    rgba(255,255,255,.055);
+
+    transition:.25s ease;
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-4px);
+
+    background:
+    rgba(255,255,255,.11);
+
+    border-color:
+    rgba(255,255,255,.25);
+
+}
+
+.contact-icon{
+
+    width:38px;
+    height:38px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:9px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4f46e5,
+        #c026d3
+    );
+
+    color:white;
+
+    font-size:17px;
+
+    flex-shrink:0;
+
+}
+
+.contact-card strong{
+
+    display:block;
+
+    color:white;
+
+    font-size:11px;
+
+}
+
+.contact-card span{
+
+    display:block;
+
+    color:#c9bdcf;
+
+    font-size:8px;
+
+    margin-top:2px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    color:white;
+
+    background:
+    linear-gradient(
+        110deg,
+        #08020e,
+        #16042a,
+        #0a0212
+    );
+
+    border-top:
+    1px solid
+    rgba(255,255,255,.08);
+
+}
+
+.footer{
+
+    min-height:105px;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr auto 1fr;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    gap:24px;
+
+    color:#b9acbf;
+
+    font-size:10px;
+
+}
+
+.footer-links a:hover{
+
+    color:#c4b5fd;
+
+}
+
+.copyright{
+
+    text-align:right;
+
+    color:#81748c;
+
+    font-size:9px;
+
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+
+.whatsapp-float{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:52px;
+    height:52px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e
+    );
+
+    font-size:24px;
+
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.25);
+
+    z-index:999;
+
+    transition:.25s ease;
+
+}
+
+.whatsapp-float:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.05);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+    .container{
+
+        width:
+        calc(100% - 45px);
+
+    }
+
+    .nav{
+
+        gap:15px;
+
+    }
+
+    .hero-inner{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero-text{
+
+        padding-bottom:10px;
+
+    }
+
+    .visual{
+
+        height:390px;
+
+    }
+
+    .service-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .portfolio-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .process-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .contact-actions{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .footer{
+
+        grid-template-columns:1fr;
+
+        padding:23px 0;
+
+    }
+
+    .copyright{
+
+        text-align:left;
+
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .container{
+
+        width:
+        calc(100% - 30px);
+
+    }
+
+    header{
+
+        height:66px;
+
+    }
+
+    .logo{
+
+        width:39px;
+        height:39px;
+
+    }
+
+    .brand-name{
+
+        font-size:16px;
+
+    }
+
+    .menu{
+
+        display:block;
+
+    }
+
+    .nav{
+
+        display:none;
+
+        position:absolute;
+
+        left:15px;
+        right:15px;
+
+        top:66px;
+
+        padding:12px;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:2px;
+
+        background:#12051e;
+
+        border:
+        1px solid
+        #352146;
+
+        border-radius:12px;
+
+        box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.65);
+
+    }
+
+    .nav.open{
+
+        display:flex;
+
+    }
+
+    .nav a{
+
+        padding:10px;
+
+    }
+
+    .nav a.active::after{
+
+        display:none;
+
+    }
+
+    .quote{
+
+        text-align:center;
+
+        margin-top:3px;
+
+    }
+
+
+    /* HERO */
+
+    .hero{
+
+        min-height:auto;
+
+    }
+
+    .hero-inner{
+
+        min-height:auto;
+
+    }
+
+    .hero-text{
+
+        padding:
+        55px 0 10px;
+
+    }
+
+    .hero h1{
+
+        font-size:40px;
+
+        letter-spacing:-1.8px;
+
+    }
+
+    .hero-description{
+
+        font-size:13px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+    .hero-features{
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+
+    }
+
+
+    /* DEVICES */
+
+    .visual{
+
+        height:270px;
+
+    }
+
+    .laptop{
+
+        width:91%;
+        height:175px;
+
+        padding:5px;
+
+        border-radius:11px;
+
+    }
+
+    .screen-nav{
+
+        height:23px;
+
+        padding:0 9px;
+
+        font-size:4px;
+
+    }
+
+    .screen-nav strong{
+
+        font-size:6px;
+
+    }
+
+    .screen-content{
+
+        padding:
+        20px 17px;
+
+    }
+
+    .screen-content h2{
+
+        font-size:14px;
+
+    }
+
+    .screen-content p{
+
+        font-size:4px;
+
+        margin:
+        5px 0 8px;
+
+    }
+
+    .screen-btn{
+
+        padding:
+        5px 8px;
+
+        font-size:4px;
+
+    }
+
+    .screen-features{
+
+        left:15px;
+        right:15px;
+
+        bottom:9px;
+
+        gap:9px;
+
+        font-size:4px;
+
+    }
+
+    .laptop-base{
+
+        width:95%;
+        height:7px;
+
+        bottom:9px;
+
+    }
+
+    .phone{
+
+        width:80px;
+        height:164px;
+
+        right:0;
+
+        bottom:17px;
+
+        padding:4px;
+
+        border-radius:14px;
+
+    }
+
+    .phone-screen{
+
+        border-radius:10px;
+
+        padding:10px 7px;
+
+    }
+
+    .phone-screen h3{
+
+        font-size:9px;
+
+        margin-top:14px;
+
+    }
+
+    .phone-screen p{
+
+        font-size:4px;
+
+    }
+
+
+    /* SERVICES */
+
+    .services{
+
+        padding-top:50px;
+
+    }
+
+    .service-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    /* STATS */
+
+    .stats-grid{
+
+        grid-template-columns:
+        1fr 1fr;
+
+    }
+
+    .stat{
+
+        padding:
+        14px 4px;
+
+        border-right:0;
+
+        border-bottom:
+        1px solid
+        #d9cee6;
+
+    }
+
+    .stat:nth-child(3),
+    .stat:nth-child(4){
+
+        border-bottom:0;
+
+    }
+
+    .stat strong{
+
+        font-size:23px;
+
+    }
+
+    .stat-icon{
+
+        font-size:19px;
+
+    }
+
+
+    /* ABOUT */
+
+    .about{
+
+        padding:65px 0;
+
+    }
+
+    .about h2{
+
+        font-size:34px;
+
+    }
+
+    .brand-display{
+
+        justify-content:center;
+
+    }
+
+    .jasd-orbit{
+
+        width:225px;
+        height:225px;
+
+    }
+
+    .jasd-ring{
+
+        width:215px;
+        height:215px;
+
+    }
+
+    .jasd-logo{
+
+        width:170px;
+        height:170px;
+
+    }
+
+
+    /* PORTFOLIO */
+
+    .portfolio,
+    .process{
+
+        padding:65px 0;
+
+    }
+
+    .portfolio-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .process-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    /* CONTACT */
+
+    .contact{
+
+        padding:
+        55px 0;
+
+    }
+
+    .contact-top{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .contact-actions{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-card{
+
+        padding:16px;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer-links{
+
+        display:none;
+
+    }
+
+    .whatsapp-float{
+
+        right:16px;
+        bottom:16px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header>
+
+<div class="container navbar">
+
+
+<a
+href="#home"
+class="brand"
+>
+
+<div class="logo">
+
+<img
+src="JasK.png"
+alt="JasD Logo"
+>
+
+</div>
+
+<div>
+
+<div class="brand-name">
+JasD
+</div>
+
+<div class="brand-name webcraft-name">
+    WebCraft Solutions
+</div>
+
+<div class="brand-tagline">
+We build. You grow.
+</div>
+
+</div>
+
+</a>
+
+
+<button
+class="menu"
+id="menuButton"
+aria-label="Open menu"
+>
+☰
+</button>
+
+
+<nav
+class="nav"
+id="nav"
+>
+
+<a
+href="#home"
+class="active"
+>
+Home
+</a>
+
+<a href="#about">
+About
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#portfolio">
+Portfolio
+</a>
+
+<a href="#process">
+Process
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+<a
+href="#contact"
+class="quote"
+>
+Get a Free Quote
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+class="hero"
+id="home"
+>
+
+<div class="hero-grid-bg"></div>
+
+<div class="hero-glow"></div>
+
+
+<div class="container hero-inner">
+
+
+<div class="hero-text">
+
+
+<div class="badge">
+
+✦ PROFESSIONAL DIGITAL SOLUTIONS
+
+</div>
+
+
+<h1>
+
+Technology
+
+<br>
+
+<span>
+That Works For You
+</span>
+
+</h1>
+
+
+<p class="hero-description">
+
+JasD provides professional digital, IT,
+cybersecurity, networking, transportation
+and technology solutions designed to help
+individuals and businesses work smarter,
+safer and more efficiently.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#services"
+class="btn primary"
+>
+
+Explore Services
+
+<span>➜</span>
+
+</a>
+
+
+<a
+href="#portfolio"
+class="btn secondary"
+>
+
+View Our Services
+
+</a>
+
+</div>
+
+
+<div class="hero-features">
+
+
+<div class="hero-feature">
+
+<div class="feature-icon">
+ϟ
+</div>
+
+<div>
+
+<strong>
+Fast Delivery
+</strong>
+
+<small>
+Professional service
+</small>
+
+</div>
+
+</div>
+
+
+<div class="hero-feature">
+
+<div class="feature-icon">
+◇
+</div>
+
+<div>
+
+<strong>
+Modern Solutions
+</strong>
+
+<small>
+Technology driven
+</small>
+
+</div>
+
+</div>
+
+
+<div class="hero-feature">
+
+<div class="feature-icon">
+⚙
+</div>
+
+<div>
+
+<strong>
+Reliable Support
+</strong>
+
+<small>
+Remote & on-site</small>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================================
+     DEVICE VISUAL
+========================================================= -->
+
+<div class="visual">
+
+
+<div class="laptop">
+
+<div class="laptop-screen">
+
+
+<div class="screen-nav">
+
+<strong>
+JasD
+</strong>
+
+<span>
+
+Digital Solutions
+&nbsp;&nbsp;
+IT Services
+&nbsp;&nbsp;
+Cybersecurity
+&nbsp;&nbsp;
+Contact
+
+</span>
+
+</div>
+
+
+<div class="screen-content">
+
+<h2>
+
+Digital Solutions
+
+<br>
+
+for Modern Businesses
+
+</h2>
+
+
+<p>
+
+Technology, IT support,
+cybersecurity and digital
+solutions tailored to your needs.
+
+</p>
+
+
+<span class="screen-btn">
+
+Get Started
+
+</span>
+
+</div>
+
+
+<div class="screen-features">
+
+<span>
+◉ Secure
+</span>
+
+<span>
+◉ Responsive
+</span>
+
+<span>
+◉ Reliable
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="phone">
+
+<div class="phone-screen">
+
+<strong>
+JasD
+</strong>
+
+
+<h3>
+
+Digital Solutions
+
+<br>
+
+That Work For You
+
+</h3>
+
+
+<p>
+
+IT, digital and
+technology solutions.
+
+</p>
+
+
+<span class="screen-btn">
+Get Started
+</span>
+
+</div>
+
+</div>
+
+
+<div class="laptop-base"></div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section
+class="services"
+id="services"
+>
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div class="label">
+WHAT WE DO
+</div>
+
+<h2>
+Our Services
+</h2>
+
+<p>
+Professional technology, digital and support services for individuals and businesses.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+
+<!-- 01 -->
+
+<div class="service">
+
+<div class="service-icon">
+▣
+</div>
+
+<h3>
+Website Design
+</h3>
+
+<p>
+Modern, responsive and user-friendly websites designed to create a strong professional online presence.
+</p>
+
+</div>
+
+
+<!-- 02 -->
+
+<div class="service">
+
+<div class="service-icon">
+&lt;/&gt;
+</div>
+
+<h3>
+Web Development
+</h3>
+
+<p>
+Custom websites and web applications built with clean code, performance and usability in mind.
+</p>
+
+</div>
+
+
+<!-- 03 -->
+
+<div class="service">
+
+<div class="service-icon">
+W
+</div>
+
+<h3>
+WordPress Solutions
+</h3>
+
+<p>
+WordPress installation, customization, themes, plugins, updates, optimization and management.
+</p>
+
+</div>
+
+
+<!-- 04 -->
+
+<div class="service">
+
+<div class="service-icon">
+✦
+</div>
+
+<h3>
+Website Maintenance
+</h3>
+
+<p>
+Website updates, security checks, backups, troubleshooting, performance optimization and ongoing support.
+</p>
+
+</div>
+
+
+<!-- 05 -->
+
+<div class="service">
+
+<div class="service-icon">
+🚚
+</div>
+
+<h3>
+Driver & Transportation
+</h3>
+
+<p>
+Transportation services for cargo and people, including reliable driving and logistics support.
+</p>
+
+</div>
+
+
+<!-- 06 -->
+
+<div class="service">
+
+<div class="service-icon">
+🔐
+</div>
+
+<h3>
+Cybersecurity
+</h3>
+
+<p>
+Data backup, data recovery, digital forensics analysis, incident reporting and practical security support.
+</p>
+
+</div>
+
+
+<!-- 07 -->
+
+<div class="service">
+
+<div class="service-icon">
+⌘
+</div>
+
+<h3>
+Computer Networks & Services
+</h3>
+
+<p>
+Network setup, troubleshooting and hardware and software configuration for reliable IT environments.
+</p>
+
+</div>
+
+
+<!-- 08 -->
+
+<div class="service">
+
+<div class="service-icon">
+⌨
+</div>
+
+<h3>
+Data Entry
+</h3>
+
+<p>
+Accurate data entry, document processing, digital records management and administrative data support.
+</p>
+
+</div>
+
+
+<!-- 09 -->
+
+<div class="service">
+
+<div class="service-icon">
+⚙
+</div>
+
+<h3>
+Technical Support
+</h3>
+
+<p>
+Computer troubleshooting, software support, system configuration and practical technical assistance.
+</p>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="service">
+
+<div class="service-icon">
+💡
+</div>
+
+<h3>
+IT Consulting
+</h3>
+
+<p>
+Technology guidance, IT planning, digital transformation advice and solutions tailored to your needs.
+</p>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="service">
+
+<div class="service-icon">
+▤
+</div>
+
+<h3>
+Presentation Design
+</h3>
+
+<p>
+Professional and engaging presentations for businesses, students, professionals, meetings and pitches.
+</p>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="service">
+
+<div class="service-icon">
+📱
+</div>
+
+<h3>
+Droid Application Development
+</h3>
+
+<p>
+Android application development focused on useful, responsive and user-friendly mobile experiences.
+</p>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="service">
+
+<div class="service-icon">
+📡
+</div>
+
+<h3>
+Telecommunication
+</h3>
+
+<p>
+Telecommunication and connectivity support including technology setup, troubleshooting and user assistance.
+</p>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="service">
+
+<div class="service-icon">
+♧
+</div>
+
+<h3>
+Customer Support
+</h3>
+
+<p>
+Professional customer service, communication, technical assistance and customer experience support.
+</p>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="service">
+
+<div class="service-icon">
+🌐
+</div>
+
+<h3>
+Remote & Hybrid Jobs
+</h3>
+
+<p>
+Remote and hybrid digital support including IT assistance, customer support, data entry and technology tasks.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="stats">
+
+<div class="container stats-grid">
+
+
+<div class="stat">
+
+<div class="stat-icon">
+☺
+</div>
+
+<div>
+
+<strong>
+20+
+</strong>
+
+<span>
+Happy Clients
+</span>
+
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+✓
+</div>
+
+<div>
+
+<strong>
+30+
+</strong>
+
+<span>
+Projects Completed
+</span>
+
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+♜
+</div>
+
+<div>
+
+<strong>
+12+
+</strong>
+
+<span>
+Years Experience
+</span>
+
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+◉
+</div>
+
+<div>
+
+<strong>
+100%
+</strong>
+
+<span>
+Client Satisfaction
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+class="about"
+id="about"
+>
+
+<div class="container about-grid">
+
+
+<div>
+
+<div class="about-label">
+ABOUT JASD
+</div>
+
+
+<h2>
+
+Technology,
+
+<br>
+
+<span>
+Digital Solutions & Support
+</span>
+
+</h2>
+
+
+<p>
+
+JasD provides a broad range of digital,
+technology and professional support services
+for businesses, organizations and individuals.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+From websites and applications to
+cybersecurity, networking, technical support,
+data services, telecommunications and
+transportation, our goal is to provide
+practical solutions that make work easier,
+safer and more efficient.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+Whether you need a website, technical
+assistance, cybersecurity support, IT
+consulting or reliable digital services,
+JasD is ready to help.
+
+</p>
+
+</div>
+
+
+
+<div class="brand-display">
+
+<div class="jasd-orbit">
+
+<div class="jasd-ring"></div>
+
+<div class="jasd-logo">
+
+<img
+src="JasK.png"
+alt="JasD Brand"
+>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PORTFOLIO / SERVICE SHOWCASE
+========================================================= -->
+
+<section
+class="portfolio"
+id="portfolio"
+>
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div class="label">
+WHAT WE OFFER
+</div>
+
+<h2>
+Our Portfolio & Capabilities
+</h2>
+
+</div>
+
+
+<p class="portfolio-intro">
+
+Our work extends beyond websites. Explore the different
+technology, digital, IT, support and professional services
+available through JasD.
+
+</p>
+
+
+<div class="portfolio-grid">
+
+
+<!-- 01 -->
+
+<div class="project">
+
+<small>
+01 / WEB
+</small>
+
+<h3>
+Web Design & Development
+</h3>
+
+<p>
+Business websites, personal portfolios, landing pages and custom web applications.
+</p>
+
+<div class="project-number">
+01
+</div>
+
+</div>
+
+
+<!-- 02 -->
+
+<div class="project">
+
+<small>
+02 / WORDPRESS
+</small>
+
+<h3>
+WordPress Solutions
+</h3>
+
+<p>
+WordPress websites, customization, themes, plugins, maintenance and optimization.
+</p>
+
+<div class="project-number">
+02
+</div>
+
+</div>
+
+
+<!-- 03 -->
+
+<div class="project">
+
+<small>
+03 / SECURITY
+</small>
+
+<h3>
+Cybersecurity
+</h3>
+
+<p>
+Data backup, data recovery, digital forensics analysis and incident reporting.
+</p>
+
+<div class="project-number">
+03
+</div>
+
+</div>
+
+
+<!-- 04 -->
+
+<div class="project">
+
+<small>
+04 / NETWORKS
+</small>
+
+<h3>
+Computer Networks
+</h3>
+
+<p>
+Network services, troubleshooting and hardware and software configuration.
+</p>
+
+<div class="project-number">
+04
+</div>
+
+</div>
+
+
+<!-- 05 -->
+
+<div class="project">
+
+<small>
+05 / IT
+</small>
+
+<h3>
+Technical Support & IT Consulting
+</h3>
+
+<p>
+Technical assistance, system troubleshooting, IT planning and professional technology advice.
+</p>
+
+<div class="project-number">
+05
+</div>
+
+</div>
+
+
+<!-- 06 -->
+
+<div class="project">
+
+<small>
+06 / DATA
+</small>
+
+<h3>
+Data Entry & Data Services
+</h3>
+
+<p>
+Accurate data entry, digital records, document processing and data support.
+</p>
+
+<div class="project-number">
+06
+</div>
+
+</div>
+
+
+<!-- 07 -->
+
+<div class="project">
+
+<small>
+07 / MOBILE
+</small>
+
+<h3>
+Droid Application Development
+</h3>
+
+<p>
+Android applications designed around practical business and personal requirements.
+</p>
+
+<div class="project-number">
+07
+</div>
+
+</div>
+
+
+<!-- 08 -->
+
+<div class="project">
+
+<small>
+08 / DESIGN
+</small>
+
+<h3>
+Presentation Design
+</h3>
+
+<p>
+Professional presentations for business proposals, meetings, education and professional communication.
+</p>
+
+<div class="project-number">
+08
+</div>
+
+</div>
+
+
+<!-- 09 -->
+
+<div class="project">
+
+<small>
+09 / TELECOM
+</small>
+
+<h3>
+Telecommunications
+</h3>
+
+<p>
+Connectivity and telecommunication technology support and troubleshooting.
+</p>
+
+<div class="project-number">
+09
+</div>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="project">
+
+<small>
+10 / SUPPORT
+</small>
+
+<h3>
+Customer Support
+</h3>
+
+<p>
+Customer service, technical assistance, communication and customer experience support.
+</p>
+
+<div class="project-number">
+10
+</div>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="project">
+
+<small>
+11 / REMOTE
+</small>
+
+<h3>
+Remote & Hybrid Services
+</h3>
+
+<p>
+Remote digital work, IT support, customer support, data entry and technology services.
+</p>
+
+<div class="project-number">
+11
+</div>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="project">
+
+<small>
+12 / TRANSPORT
+</small>
+
+<h3>
+Driver & Transportation
+</h3>
+
+<p>
+Transportation of cargo and people with dependable driver and logistics services.
+</p>
+
+<div class="project-number">
+12
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section
+class="process"
+id="process"
+>
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div class="label">
+HOW WE WORK
+</div>
+
+<h2>
+Our Process
+</h2>
+
+<p>
+Simple steps. Professional results.
+</p>
+
+</div>
+
+
+<div class="process-grid">
+
+
+<div class="process-item">
+
+<div class="process-number">
+01
+</div>
+
+<h3>
+Discover
+</h3>
+
+<p>
+We understand your goals, requirements, business and audience.
+</p>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-number">
+02
+</div>
+
+<h3>
+Plan
+</h3>
+
+<p>
+We identify the right technology, service and approach for your needs.
+</p>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-number">
+03
+</div>
+
+<h3>
+Build & Deliver
+</h3>
+
+<p>
+We execute the project professionally and keep you informed throughout.
+</p>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-number">
+04
+</div>
+
+<h3>
+Support
+</h3>
+
+<p>
+After delivery, we remain available for maintenance, support and future improvements.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+class="contact"
+id="contact"
+>
+
+<div class="container">
+
+
+<div class="contact-box">
+
+
+<div class="contact-top">
+
+<div>
+
+<div class="contact-label">
+LET'S WORK TOGETHER
+</div>
+
+<h2>
+Ready to start your project?
+</h2>
+
+<p>
+Contact JasD today for professional digital, IT and technology solutions.
+</p>
+
+</div>
+
+
+<a
+href="tel:0741746315"
+class="btn primary"
+>
+
+Call Now
+
+<span>➜</span>
+
+</a>
+
+</div>
+
+
+
+<div class="contact-actions">
+
+
+<!-- PHONE -->
+
+<a
+href="tel:0741746315"
+class="contact-card"
+>
+
+<div class="contact-icon">
+☎
+</div>
+
+<div>
+
+<strong>
+Phone
+</strong>
+
+<span>
+0741746315
+</span>
+
+</div>
+
+</a>
+
+
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/254741746315"
+target="_blank"
+rel="noopener"
+class="contact-card"
+>
+
+<div class="contact-icon">
+☏
+</div>
+
+<div>
+
+<strong>
+WhatsApp
+</strong>
+
+<span>
+Chat with JasD
+</span>
+
+</div>
+
+</a>
+
+
+<!-- EMAIL -->
+
+<a
+href="mailto:jden1390@gmail.com"
+class="contact-card"
+>
+
+<div class="contact-icon">
+✉
+</div>
+
+<div>
+
+<strong>
+Email
+</strong>
+
+<span>
+jden1390@gmail.com
+</span>
+
+</div>
+
+</a>
+
+
+<!-- LINKEDIN -->
+
+<a
+href="https:www.linkedin.com/in/james-w-1b2977289"
+target="_blank"
+rel="noopener"
+class="contact-card"
+>
+
+<div class="contact-icon">
+in
+</div>
+
+<div>
+
+<strong>
+LinkedIn
+</strong>
+
+<span>
+Connect professionally
+</span>
+
+</div>
+
+</a>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<div class="container footer">
+
+
+<a
+href="#home"
+class="brand"
+>
+
+<div class="logo">
+
+<img
+src="JasK.png"
+alt="JasD Logo"
+>
+
+</div>
+
+
+<div>
+
+<div class="brand-name">
+JasD
+</div>
+
+<div class="brand-tagline">
+We build. You grow.
+</div>
+
+</div>
+
+</a>
+
+
+<div class="footer-links">
+
+<a href="#home">
+Home
+</a>
+
+<a href="#about">
+About
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#portfolio">
+Portfolio
+</a>
+
+<a href="#process">
+Process
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 JasD. All rights reserved.
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     FLOATING WHATSAPP BUTTON
+========================================================= -->
+
+<a
+href="https://wa.me/254741746315"
+target="_blank"
+rel="noopener"
+class="whatsapp-float"
+aria-label="Chat with JasD on WhatsApp"
+>
+☏
+</a>
+
+
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuButton =
+document.getElementById("menuButton");
+
+const nav =
+document.getElementById("nav");
+
+
+menuButton.addEventListener(
+    "click",
+    function(){
+
+        nav.classList.toggle("open");
+
+    }
+);
+
+
+/* CLOSE MENU AFTER CLICK */
+
+document
+.querySelectorAll(".nav a")
+.forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            nav.classList.remove("open");
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+document.querySelectorAll(
+    "section[id]"
+);
+
+const navItems =
+document.querySelectorAll(
+    ".nav a:not(.quote)"
+);
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        let current = "home";
+
+        sections.forEach(
+            function(section){
+
+                const sectionTop =
+                    section.offsetTop - 180;
+
+                if(
+                    window.scrollY >= sectionTop
+                ){
+
+                    current =
+                        section.id;
+
+                }
+
+            }
+        );
+
+
+        navItems.forEach(
+            function(link){
+
+                link.classList.remove(
+                    "active"
+                );
+
+
+                if(
+                    link.getAttribute("href")
+                    ===
+                    "#" + current
+                ){
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const animatedElements =
+document.querySelectorAll(
+    ".service, .project, .process-item, .contact-card"
+);
+
+
+const observer =
+new IntersectionObserver(
+    function(entries){
+
+        entries.forEach(
+            function(entry){
+
+                if(
+                    entry.isIntersecting
+                ){
+
+                    entry.target.style.opacity =
+                        "1";
+
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            }
+        );
+
+    },
+    {
+        threshold:.12
+    }
+);
+
+
+animatedElements.forEach(
+    function(element){
+
+        element.style.opacity =
+            "0";
+
+        element.style.transform =
+            "translateY(25px)";
+
+        element.style.transition =
+            "opacity .6s ease, transform .6s ease";
+
+        observer.observe(element);
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+```
