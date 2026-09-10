@@ -4493,6 +4493,108 @@ animatedElements.forEach(
 </script>
 
 
+
+
+<!-- =========================================================
+     JASD PREMIUM ANALYTICS EVENT TRACKING
+========================================================= -->
+<script>
+(function () {
+  function trackEvent(eventName, parameters = {}) {
+    if (typeof gtag === "function") gtag("event", eventName, parameters);
+  }
+
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener("click", () => trackEvent("phone_click", {
+      contact_method: "phone", link_text: link.innerText.trim() || "Phone"
+    }));
+  });
+
+  document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    link.addEventListener("click", () => trackEvent("email_click", {
+      contact_method: "email", link_text: link.innerText.trim() || "Email"
+    }));
+  });
+
+  document.querySelectorAll('a[href*="wa.me"]:not(.whatsapp-float)').forEach(link => {
+    link.addEventListener("click", () => trackEvent("whatsapp_click", {
+      contact_method: "whatsapp", location: "page_link", link_text: link.innerText.trim() || "WhatsApp"
+    }));
+  });
+
+  document.querySelectorAll('a[href*="linkedin.com"]').forEach(link => {
+    link.addEventListener("click", () => trackEvent("linkedin_click", {
+      contact_method: "linkedin", link_text: link.innerText.trim() || "LinkedIn"
+    }));
+  });
+
+  document.querySelectorAll(".quote").forEach(link => {
+    link.addEventListener("click", () => trackEvent("quote_click", {
+      button_text: link.innerText.trim() || "Get a Quote"
+    }));
+  });
+
+  document.querySelectorAll(".nav a").forEach(link => {
+    link.addEventListener("click", () => trackEvent("nav_click", {
+      navigation_item: link.innerText.trim(),
+      destination: link.getAttribute("href") || ""
+    }));
+  });
+
+  document.querySelectorAll(".project").forEach(project => {
+    project.addEventListener("click", () => {
+      const title = project.querySelector("h3");
+      trackEvent("project_interest", {
+        project_name: title ? title.innerText.trim() : "Unknown project"
+      });
+    });
+  });
+
+  document.querySelectorAll(".service").forEach(service => {
+    service.addEventListener("click", () => {
+      const title = service.querySelector("h3");
+      trackEvent("service_interest", {
+        service_name: title ? title.innerText.trim() : "Unknown service"
+      });
+    });
+  });
+
+  const trackedSections = ["about", "services", "portfolio", "process", "contact"];
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && trackedSections.includes(entry.target.id)) {
+          trackEvent("section_view", { section_name: entry.target.id });
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+
+    trackedSections.forEach(id => {
+      const section = document.getElementById(id);
+      if (section) sectionObserver.observe(section);
+    });
+  }
+
+  document.querySelectorAll('a[href*=".pdf"], a[download]').forEach(link => {
+    link.addEventListener("click", () => trackEvent("cv_download", {
+      file_name: link.getAttribute("href") || "CV"
+    }));
+  });
+
+  const floatingWhatsApp = document.querySelector(".whatsapp-float");
+  if (floatingWhatsApp) {
+    floatingWhatsApp.addEventListener("click", () => trackEvent("whatsapp_click", {
+      contact_method: "whatsapp", location: "floating_button"
+    }));
+  }
+
+  trackEvent("portfolio_loaded", {
+    page_title: document.title,
+    page_location: window.location.href
+  });
+})();
+</script>
 </body>
 
 </html>
