@@ -1806,6 +1806,48 @@ header{
     rgba(255,255,255,.055);
 
 }
+.project-link{
+
+
+display:inline-flex;
+
+align-items:center;
+
+margin-top:16px;
+
+padding:8px 13px;
+
+color:white;
+
+font-size:9px;
+
+font-weight:800;
+
+border:
+1px solid
+rgba(255,255,255,.28);
+
+border-radius:7px;
+
+background:
+rgba(255,255,255,.08);
+
+transition:.25s ease;
+
+}
+
+.project-link:hover{
+
+transform:translateY(-2px);
+
+background:
+rgba(255,255,255,.16);
+
+border-color:
+rgba(255,255,255,.5);
+
+}
+ 
 
 
 /* =========================================================
@@ -3786,18 +3828,30 @@ Technical assistance, system troubleshooting, IT planning and professional techn
 </small>
 
 <h3>
-Data Entry & Data Services
+Data Entry &amp; Data Services
 </h3>
 
 <p>
-Accurate data entry, digital records, document processing and data support.
+Accurate data entry, data cleansing, validation, digital records,
+document processing, reconciliation and data-quality support.
 </p>
+
+<a
+href="https://crystal-sudo.github.io/JasD-Data-Hub/"
+target="_blank"
+rel="noopener noreferrer"
+class="project-link"
+
+>
+
+Explore JasD DataHub → </a>
 
 <div class="project-number">
 06
 </div>
 
 </div>
+
 
 
 <!-- 07 -->
@@ -4593,6 +4647,22 @@ animatedElements.forEach(
     page_title: document.title,
     page_location: window.location.href
   });
+ document.querySelectorAll(".project-link").forEach(link => {
+
+link.addEventListener("click", () => {
+
+trackEvent("datahub_click", {
+
+  project_name: "JasD DataHub",
+
+  destination: link.href
+
+});
+
+});
+
+});
+
 })();
 </script>
 </body>
